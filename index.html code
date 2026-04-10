@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Nuts - Premium Quality Nuts & Dates</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🥜 VITAL NUTS</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="products.html">Our Products</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Moving Golden Plate -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Premium Quality Nuts & Dates</h2>
+            <p>Discover the finest selection of natural, wholesome nuts and dates</p>
+            
+            <!-- Moving Golden Plate with Nuts -->
+            <div class="golden-plate-container">
+                <div class="golden-plate">
+                    <div class="nuts-display">
+                        <div class="nut walnuts">
+                            <img src="https://images.unsplash.com/photo-1585518419759-87f59c8e3e5a?w=150&h=150&fit=crop" alt="Walnuts">
+                            <p>Walnuts</p>
+                        </div>
+                        <div class="nut almonds">
+                            <img src="https://images.unsplash.com/photo-1599599810694-b5ac4dd12a18?w=150&h=150&fit=crop" alt="Almonds">
+                            <p>Almonds</p>
+                        </div>
+                        <div class="nut cashews">
+                            <img src="https://images.unsplash.com/photo-1585521472455-cd3b3dd66b2d?w=150&h=150&fit=crop" alt="Cashews">
+                            <p>Cashews</p>
+                        </div>
+                        <div class="nut dates">
+                            <img src="https://images.unsplash.com/photo-1599599810694-b5ac4dd12a18?w=150&h=150&fit=crop" alt="Dates">
+                            <p>Medjool Dates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="subtitle">200g of each premium nut variety</p>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Our Premium Selection</h2>
+            <p>Click on each product to see pricing and details</p>
+            
+            <div class="products-grid">
+                <!-- Walnuts -->
+                <div class="product-card" onclick="showPrice('Walnuts', '24 EUR/Kg')">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1585518419759-87f59c8e3e5a?w=300&h=300&fit=crop" alt="Walnuts">
+                    </div>
+                    <h3>Walnuts</h3>
+                    <p class="click-price">Click for price</p>
+                    <button class="btn-primary">View Details</button>
+                </div>
+
+                <!-- Almonds -->
+                <div class="product-card" onclick="showPrice('Almonds', '18 EUR/Kg')">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1585521472455-cd3b3dd66b2d?w=300&h=300&fit=crop" alt="Almonds">
+                    </div>
+                    <h3>Almonds</h3>
+                    <p class="click-price">Click for price</p>
+                    <button class="btn-primary">View Details</button>
+                </div>
+
+                <!-- Cashews -->
+                <div class="product-card" onclick="showPrice('Cashews', '22 EUR/Kg')">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1585518419759-87f59c8e3e5a?w=300&h=300&fit=crop" alt="Cashews">
+                    </div>
+                    <h3>Cashews</h3>
+                    <p class="click-price">Click for price</p>
+                    <button class="btn-primary">View Details</button>
+                </div>
+
+                <!-- Medjool Dates -->
+                <div class="product-card" onclick="showPrice('Medjool Dates', '10 EUR/Kg')">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1585521472455-cd3b3dd66b2d?w=300&h=300&fit=crop" alt="Medjool Dates">
+                    </div>
+                    <h3>Medjool Dates</h3>
+                    <p class="click-price">Click for price</p>
+                    <button class="btn-primary">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <h2>Why Choose Vital Nuts?</h2>
+            <div class="benefits">
+                <div class="benefit-item">
+                    <span class="icon">✓</span>
+                    <h3>100% Natural</h3>
+                    <p>No additives or preservatives</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="icon">✓</span>
+                    <h3>Premium Quality</h3>
+                    <p>Carefully selected and tested</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="icon">✓</span>
+                    <h3>Fresh Delivery</h3>
+                    <p>Direct from source to your door</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="icon">✓</span>
+                    <h3>Fair Pricing</h3>
+                    <p>Competitive rates for premium products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>Email: <a href="mailto:vitalfoodseu@gmail.com">vitalfoodseu@gmail.com</a></p>
+            <p><a href="order.html" class="btn-primary">Place an Order</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Vital Nuts. All rights reserved. | Premium Nuts & Dates Supplier</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
