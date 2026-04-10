@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Vital Nuts</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .order-section {
+            padding: 60px 20px;
+            background: var(--white);
+        }
+
+        .order-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--cream) 100%);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .order-container h1 {
+            color: var(--gold-primary);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .order-container > p {
+            text-align: center;
+            color: var(--dark-brown);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--dark-brown);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--gold-primary);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--white);
+            color: var(--dark-brown);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold-dark);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #999;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .submit-btn {
+            flex: 1;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .reset-btn {
+            flex: 1;
+            background: var(--dark-brown);
+            color: var(--gold-light);
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            background: var(--gold-dark);
+            color: white;
+        }
+
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+            animation: slideIn 0.3s ease;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .error-message {
+            display: none;
+            background: linear-gradient(135deg, #f44336, #da190b);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+            animation: slideIn 0.3s ease;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🥜 VITAL NUTS</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Our Products</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Order Form Section -->
+    <section class="order-section">
+        <div class="order-container">
+            <h1>Place Your Order</h1>
+            <p>Fill out the form below and we'll get back to you shortly</p>
+
+            <div class="success-message" id="successMessage">
+                ✓ Thank you! Your order has been submitted successfully. We will contact you soon.
+            </div>
+
+            <div class="error-message" id="errorMessage"></div>
+
+            <form id="orderForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Enter your full name" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email address" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="Enter your phone number" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message / Order Description *</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        placeholder="Please describe your order requirements and preferences" 
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Send Order</button>
+                    <button type="reset" class="reset-btn">Clear Form</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Vital Nuts. All rights reserved. | Premium Nuts & Dates Supplier</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('orderForm');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            // Validate form
+            if (!name || !email || !phone || !message) {
+                showError('Please fill in all required fields');
+                return;
+            }
+
+            // Create mailto link
+            const recipientEmail = 'vitalfoodseu@gmail.com';
+            const subject = encodeURIComponent('New Order from ' + name);
+            const body = encodeURIComponent(
+                `Name: ${name}\n` +
+                `Email: ${email}\n` +
+                `Phone: ${phone}\n` +
+                `Message:\n${message}`
+            );
+
+            // For demonstration, we'll show a success message
+            // In a real application, you would use a backend service
+            showSuccess();
+            form.reset();
+
+            // Open email client (optional)
+            // Uncomment the line below to open the default email client
+            // window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+        }
+
+        function showSuccess() {
+            const successMsg = document.getElementById('successMessage');
+            const errorMsg = document.getElementById('errorMessage');
+            
+            errorMsg.classList.remove('show');
+            successMsg.classList.add('show');
+
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+        }
+
+        function showError(message) {
+            const errorMsg = document.getElementById('errorMessage');
+            const successMsg = document.getElementById('successMessage');
+            
+            successMsg.classList.remove('show');
+            errorMsg.textContent = '✗ ' + message;
+            errorMsg.classList.add('show');
+
+            setTimeout(() => {
+                errorMsg.classList.remove('show');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
